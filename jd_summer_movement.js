@@ -263,7 +263,7 @@ async function movement() {
         //==================================微信任务========================================================================
         $.wxTaskList = [];
         if (!$.hotFlag) await takePostRequest('wxTaskDetail');
-        console.log("微信任务列表有"+wxTaskList.length)
+        console.log("微信任务列表有"+$.wxTaskList.length)
         for (let i = 0; i < $.wxTaskList.length; i++) {
             $.oneTask = $.wxTaskList[i];
             console.log("任务类型为"+$.oneTask.taskType + "任务的状态为"+$.oneTask.status);
