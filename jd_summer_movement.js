@@ -263,8 +263,10 @@ async function movement() {
         //==================================微信任务========================================================================
         $.wxTaskList = [];
         if (!$.hotFlag) await takePostRequest('wxTaskDetail');
+        console.log("微信任务列表有"+wxTaskList.length)
         for (let i = 0; i < $.wxTaskList.length; i++) {
             $.oneTask = $.wxTaskList[i];
+            console.log("任务类型为"+$.oneTask.taskType + "任务的状态为"+$.oneTask.status);
             if ($.oneTask.taskType === 2 || $.oneTask.status !== 1) {
                 continue;
             } //不做加购
@@ -829,7 +831,7 @@ function aabbiill() {
 
 // 随机数
 function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min)) + min;
+    return Math.floor(Math.random() * (1001 - 1000)) + 1001;
 }
 
 // 计算时间
